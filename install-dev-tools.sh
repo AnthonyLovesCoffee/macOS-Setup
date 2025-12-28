@@ -13,6 +13,7 @@ brew_tools=(
     postgresql
     awscli
     openshift-cli
+    tmux
 )
 
 # Installing development tools
