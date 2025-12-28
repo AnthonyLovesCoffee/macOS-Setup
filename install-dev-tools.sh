@@ -14,6 +14,7 @@ brew_tools=(
     awscli
     openshift-cli
     tmux
+    bat
 )
 
 # Installing development tools
