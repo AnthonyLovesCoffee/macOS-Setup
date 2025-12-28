@@ -8,7 +8,7 @@ brew_tools=(
     python@3.13
     node@24
     openjdk@21
-    maven
+    gradle
     yarn
     postgresql
     awscli

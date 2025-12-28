@@ -14,7 +14,6 @@ casks=(
     discord
     zoom
     microsoft-teams
-    github
     visual-studio-code
     docker
     raycast
@@ -25,6 +24,13 @@ casks=(
     adguard
     steam
     todoist-app
+    notion
+    iterm2
+    logi-options+
+    google-chrome
+    stremio
+    shottr
+    postman
 )
 
 # Installing applications
