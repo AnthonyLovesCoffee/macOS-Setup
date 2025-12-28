@@ -7,6 +7,7 @@ fonts=(
     font-sf-compact
     font-sf-mono
     font-new-york
+    font-jetbrains-mono-nerd-font
 )
 
 echo "Installing ${#fonts[@]} fonts..."
