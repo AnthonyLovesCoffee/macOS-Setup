@@ -16,6 +16,7 @@ brew_tools=(
     tmux
     bat
     fzf
+    fd
 )
 
 # Installing development tools
