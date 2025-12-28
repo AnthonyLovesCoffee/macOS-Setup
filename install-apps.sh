@@ -24,7 +24,7 @@ casks=(
     adguard
     steam
     todoist-app
-    notion
+    obsidian
     iterm2
     logi-options+
     google-chrome
