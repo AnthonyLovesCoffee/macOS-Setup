@@ -15,6 +15,7 @@ brew_tools=(
     openshift-cli
     tmux
     bat
+    fzf
 )
 
 # Installing development tools
