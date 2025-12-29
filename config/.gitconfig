@@ -1,0 +1,53 @@
+[user]
+	name = Anthony Salib
+	email = asalib02@gmail.com
+
+[core]
+	excludesfile = ~/.gitignore_global
+
+[credential]
+	helper = osxkeychain
+
+[pull]
+	rebase = false
+
+[push]
+	default = simple
+	followTags = true
+
+[init]
+	defaultBranch = main
+
+[alias]
+	c = commit -v
+	co = checkout
+	cob = checkout -b
+	coi = !git checkout $(git branch --sort=committerdate | fzf)
+	s = status
+	br = branch
+	d = diff
+	dd = diff --cached
+	l = log --oneline --graph
+	cp = cherry-pick
+	ps = push
+	pl = pull
+	pb = pull --rebase
+	
+	# Pretty log
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	# Commit all changes
+	ca = !git add -A && git commit -av
+	
+	# Switch to a branch, creating it if necessary
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	
+	# Show contributors
+	contributors = shortlog --summary --numbered
+	
+	# Undo last commit
+	undo = reset HEAD~1 --mixed
+	# Reset to last commit
+	reset-hard = reset --hard HEAD
+	
+	# list aliases
+	aliases = config --get-regexp alias
