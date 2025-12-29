@@ -21,8 +21,6 @@
 [alias]
 	c = commit -v
 	co = checkout
-	cob = checkout -b
-	coi = !git checkout $(git branch --sort=committerdate | fzf)
 	s = status
 	br = branch
 	d = diff
