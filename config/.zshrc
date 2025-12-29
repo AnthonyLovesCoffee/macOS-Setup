@@ -28,6 +28,7 @@ alias ll="ls -asl"
 alias clc="clear"
 alias seek="ssh ant@host"
 
+alias path='echo $PATH | tr -s ":" "\n"' # pretty print the path
 #------------------------------------------------------
 # fd settings
 #------------------------------------------------------
