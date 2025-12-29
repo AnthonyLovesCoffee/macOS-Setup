@@ -2,6 +2,12 @@
 
 A modular collection of Bash scripts for automating the setup of a complete macOS development environment. Each script handles a specific aspect of the setup process, allowing you to run only what you need.
 
+## TODO:
+- Automate config setup
+- Automate plugin downloads for tmux and omz
+- Add iTerm config
+- Document new changes and plugins
+
 ## 📋 Table of Contents
 
 - [Overview](#overview)
