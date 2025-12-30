@@ -3,10 +3,9 @@
 A modular collection of Bash scripts for automating the setup of a complete macOS development environment. Each script handles a specific aspect of the setup process, allowing you to run only what you need.
 
 ## TODO:
-- Automate config setup
-- Automate plugin downloads for tmux and omz
-- Add iTerm config
-- Document new changes and plugins
+[ ] Automate config setup using stow  
+[ ] Automate plugin downloads for tmux and omz  
+[ ] Document new changes and plugins  
 
 ## 📋 Table of Contents
 
@@ -47,8 +46,8 @@ This toolkit provides a modular approach to setting up a macOS development envir
 # Clone or download all scripts to a directory
 cd ~/Downloads/macos-setup
 
-# Make the master script executable
-chmod +x setup-all.sh
+# Make scripts executable
+chmod +x *.sh
 
 # Run the complete setup
 ./setup-all.sh
@@ -167,77 +166,7 @@ chmod +x *.sh
 - Handles errors with optional continuation
 - Displays final setup instructions
 
-## 🎨 Customization
 
-Each script contains arrays at the top that define what gets installed. Simply edit these arrays to add or remove items:
-
-### Example: Adding an Application
-
-Edit `2-install-apps.sh`:
-
-```bash
-casks=(
-    microsoft-edge
-    whatsapp
-    # ... existing apps ...
-    slack              # Add this line
-    notion             # Add this line
-)
-```
-
-### Example: Adding a Python Package
-
-Edit `4-install-packages.sh`:
-
-```bash
-pip_packages=(
-    pipenv
-    # ... existing packages ...
-    flask              # Add this line
-    django             # Add this line
-)
-```
-
-### Example: Changing Git Configuration
-
-Edit `6-configure-environment.sh`:
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
-```
-
-## 💡 Usage Examples
-
-### Install Only Core Development Tools
-
-```bash
-./1-install-homebrew.sh
-./3-install-dev-tools.sh
-./6-configure-environment.sh
-```
-
-### Install Apps and Fonts Only
-
-```bash
-./1-install-homebrew.sh
-./2-install-apps.sh
-./5-install-fonts.sh
-```
-
-### Reinstall Just Python Packages
-
-```bash
-./4-install-packages.sh
-```
-
-### Update All Homebrew Packages
-
-```bash
-./1-install-homebrew.sh
-brew upgrade
-./7-cleanup.sh
-```
 
 ### Skip Interactive Prompts in Master Script
 
@@ -259,23 +188,8 @@ yes | ./setup-all.sh
 
 ### Permission Denied Errors
 
-```bash
-# Make scripts executable
-chmod +x *.sh
-
-# If still failing, check file ownership
-ls -la *.sh
-```
-
 ### Python Package Installation Fails
 
-```bash
-# Upgrade pip first
-pip3 install --upgrade pip
-
-# Then retry
-./4-install-packages.sh
-```
 
 ### VS Code Extensions Not Installing
 
@@ -378,7 +292,7 @@ EOF
 touch .zshenv
 ```
 
-## 🔄 Post-Installation
+## Post-Install
 
 After running the setup scripts:
 
@@ -405,14 +319,9 @@ After running the setup scripts:
 
 6. **Update Dotfiles**: Further customize your `.zshrc`, `.vimrc`, and other config files
 
-## 🛡️ Safety Features
 
-- Scripts check if tools are already installed before reinstalling
-- Non-destructive operations (won't overwrite existing configurations without warning)
-- Error handling in master script allows continuation after failures
-- Cleanup script safely removes only cache files
 
-## 📝 Notes
+## Notes
 
 - Script execution order matters when using individual scripts
 - Some installations may require administrator password
@@ -422,29 +331,10 @@ After running the setup scripts:
 - Node packages install globally via npm
 - VS Code extensions install to user profile
 
-## 🤝 Contributing
-
-To add new tools or modify existing configurations:
-
-1. Edit the appropriate script's array
-2. Test the installation manually first
-3. Update this README with your changes
-4. Consider sharing your customizations
-
-## 📄 License
-
-These scripts are provided as-is for personal use. Feel free to modify and distribute as needed.
-
-## 🔗 Useful Resources
+## Useful Resources
 
 - [Homebrew Documentation](https://docs.brew.sh)
 - [Homebrew Cask Search](https://formulae.brew.sh/cask/)
 - [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode)
 - [Python Package Index (PyPI)](https://pypi.org)
 - [npm Registry](https://www.npmjs.com)
-
----
-
-**Created by**: Anthony Salib  
-**Last Updated**: December 2025  
-**Version**: 1.0.0
