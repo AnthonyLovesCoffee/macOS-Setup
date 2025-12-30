@@ -2,7 +2,6 @@
 
 echo "Installing Development Tools..."
 
-# Development tools list
 brew_tools=(
     git
     python@3.13
@@ -17,6 +16,9 @@ brew_tools=(
     bat
     fzf
     fd
+    jq
+    pass
+    stow
 )
 
 # Installing development tools
