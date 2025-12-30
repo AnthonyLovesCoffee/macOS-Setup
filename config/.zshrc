@@ -14,11 +14,6 @@ source $ZSH/oh-my-zsh.sh
 #------------------------------------------------------
 # Aliases
 #------------------------------------------------------
-alias serve='python -m http.server'
-alias de='setxkbmap de'
-alias us='setxkbmap us'
-alias lnks='~/.bookmarks/lnks.sh'
-
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../../'
@@ -57,8 +52,16 @@ path_add() {
   [[ -d "$1" ]] && PATH="$1:$PATH"
 }
 
-path_add "$HOME/Library/Python/3.9/bin"
+path_add "/opt/homebrew/opt/python@3.13/libexec/bin"
 path_add "/opt/homebrew/opt/node@22/bin"
+if [ -x /usr/libexec/java_home ]; then
+  export JAVA_HOME=$(/usr/libexec/java_home -v21 2>/dev/null)
+  [[ -n "$JAVA_HOME" ]] && path_add "$JAVA_HOME/bin"
+fi
+
+for python_bin in "$HOME/Library/Python/"*/bin; do
+  path_add "$python_bin"
+done
 
 export PATH
 

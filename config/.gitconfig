@@ -8,18 +8,12 @@
 [credential]
 	helper = osxkeychain
 
-[pull]
-	rebase = false
-
-[push]
-	default = simple
-	followTags = true
-
 [init]
 	defaultBranch = main
 
 [alias]
 	c = commit -v
+    ca = !git add -A && git commit -av
 	co = checkout
 	s = status
 	br = branch
@@ -30,21 +24,14 @@
 	ps = push
 	pl = pull
 	pb = pull --rebase
-	
+	contributors = shortlog --summary --numbered
+
 	# Pretty log
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	# Commit all changes
-	ca = !git add -A && git commit -av
-	
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit	
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 	
-	# Show contributors
-	contributors = shortlog --summary --numbered
-	
-	# Undo last commit
 	undo = reset HEAD~1 --mixed
-	# Reset to last commit
 	reset-hard = reset --hard HEAD
 	
 	# list aliases
