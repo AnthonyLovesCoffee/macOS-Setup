@@ -61,3 +61,4 @@ echo "4. Sign in to applications that require authentication"
 echo ""
 echo "Done!"
 echo ""
+fastfetch

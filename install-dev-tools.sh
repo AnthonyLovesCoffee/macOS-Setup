@@ -19,6 +19,7 @@ brew_tools=(
     jq
     pass
     stow
+    fastfetch
 )
 
 # Installing development tools
