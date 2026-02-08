@@ -48,6 +48,9 @@ do
     fi
 done
 
+echo "source tmux..."
+tmux source-file ~/.tmux.conf
+
 echo ""
 echo "=========================================="
 echo "Setup Complete!"
